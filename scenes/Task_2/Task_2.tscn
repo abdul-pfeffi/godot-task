@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bpe3gmij77ge"]
+[gd_scene load_steps=3 format=3 uid="uid://yoforewrpgdl"]
 
-[ext_resource type="Texture2D" uid="uid://bjumq56mwucv2" path="res://Pfeffermind-Logo-green.png" id="1_3mqji"]
-[ext_resource type="Script" uid="uid://blpoqycay0r0o" path="res://MenuNavigation.gd" id="2_x4av3"]
+[ext_resource type="Texture2D" uid="uid://bjumq56mwucv2" path="res://assets/misc/Pfeffermind-Logo-green.png" id="1_nipn2"]
+[ext_resource type="Script" uid="uid://blpoqycay0r0o" path="res://scripts/util/MenuNavigation.gd" id="2_e8kfu"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -13,7 +13,7 @@ color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 [node name="Pfeffermind_Logo" type="Sprite2D" parent="."]
 position = Vector2(1417, 836.99994)
 scale = Vector2(0.21396896, 0.21396896)
-texture = ExtResource("1_3mqji")
+texture = ExtResource("1_nipn2")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 356.0
@@ -22,7 +22,8 @@ offset_right = 1202.0
 offset_bottom = 277.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 96
-text = "Godot assignment"
+text = "Task 2"
+horizontal_alignment = 1
 
 [node name="Subtitle" type="RichTextLabel" parent="."]
 offset_left = 327.0
@@ -31,17 +32,16 @@ offset_right = 1250.0
 offset_bottom = 498.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 24
-text = "This assignment is designed to be replayed and restarted multiple times. Along the way, there will be many tasks that need to be done in order to finish this assignment. Please try to document by commenting in the code base the way you solved something and what you did inside the Godot engine"
+text = "This task is about changing the color when hovering over the square. Make sure to change the square from green to red. Write a script for it. As an extra, make sure the cursor turns into a pointer when hovering over the square."
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BeginButton" type="Button" parent="." node_paths=PackedStringArray("navigation_button")]
-offset_left = 686.0
-offset_top = 616.0
-offset_right = 892.0
-offset_bottom = 708.0
+[node name="NextButton" type="Button" parent="." node_paths=PackedStringArray("navigation_button")]
+offset_left = 652.0
+offset_top = 736.0
+offset_right = 858.0
+offset_bottom = 828.0
 theme_override_font_sizes/font_size = 32
-text = "Begin"
-script = ExtResource("2_x4av3")
+text = "Next Task"
+script = ExtResource("2_e8kfu")
 navigation_button = NodePath(".")
-destination_scene = "res://Task_1.tscn"

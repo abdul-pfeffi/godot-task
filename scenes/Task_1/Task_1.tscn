@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ddivapwm7n1hf"]
+[gd_scene load_steps=3 format=3 uid="uid://ddivapwm7n1hf"]
 
-[ext_resource type="Texture2D" uid="uid://bjumq56mwucv2" path="res://Pfeffermind-Logo-green.png" id="1_hdj3s"]
+[ext_resource type="Texture2D" uid="uid://bjumq56mwucv2" path="res://assets/misc/Pfeffermind-Logo-green.png" id="1_surk7"]
+[ext_resource type="Script" uid="uid://blpoqycay0r0o" path="res://scripts/util/MenuNavigation.gd" id="2_026dh"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -12,7 +13,7 @@ color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 [node name="Pfeffermind_Logo" type="Sprite2D" parent="."]
 position = Vector2(1417, 836.99994)
 scale = Vector2(0.21396896, 0.21396896)
-texture = ExtResource("1_hdj3s")
+texture = ExtResource("1_surk7")
 
 [node name="Title" type="Label" parent="."]
 offset_left = 356.0
@@ -24,7 +25,7 @@ theme_override_font_sizes/font_size = 96
 text = "Task 1"
 horizontal_alignment = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
+[node name="Subtitle" type="RichTextLabel" parent="."]
 offset_left = 327.0
 offset_top = 286.0
 offset_right = 1250.0
@@ -36,10 +37,12 @@ Currently it has no function"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BeginButton" type="Button" parent="."]
+[node name="NextButton" type="Button" parent="." node_paths=PackedStringArray("navigation_button")]
 offset_left = 684.0
 offset_top = 562.0
 offset_right = 890.0
 offset_bottom = 654.0
 theme_override_font_sizes/font_size = 32
-text = "Begin"
+text = "Next Task"
+script = ExtResource("2_026dh")
+navigation_button = NodePath(".")

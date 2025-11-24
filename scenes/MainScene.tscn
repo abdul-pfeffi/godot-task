@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpe3gmij77ge"]
+
+[ext_resource type="Texture2D" uid="uid://bjumq56mwucv2" path="res://assets/misc/Pfeffermind-Logo-green.png" id="1_ibiss"]
+[ext_resource type="Script" uid="uid://blpoqycay0r0o" path="res://scripts/util/MenuNavigation.gd" id="2_c6dvc"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1600.0
+offset_bottom = 896.0
+color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+
+[node name="Pfeffermind_Logo" type="Sprite2D" parent="."]
+position = Vector2(1417, 836.99994)
+scale = Vector2(0.21396896, 0.21396896)
+texture = ExtResource("1_ibiss")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 356.0
+offset_top = 145.0
+offset_right = 1202.0
+offset_bottom = 277.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 96
+text = "Godot assignment"
+
+[node name="Subtitle" type="RichTextLabel" parent="."]
+offset_left = 327.0
+offset_top = 286.0
+offset_right = 1250.0
+offset_bottom = 498.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 24
+text = "This assignment is designed to be replayed and restarted multiple times. Along the way, there will be many tasks that need to be done in order to finish this assignment. Please try to document by commenting in the code base the way you solved something and what you did inside the Godot engine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BeginButton" type="Button" parent="." node_paths=PackedStringArray("navigation_button")]
+offset_left = 686.0
+offset_top = 616.0
+offset_right = 892.0
+offset_bottom = 708.0
+theme_override_font_sizes/font_size = 32
+text = "Begin"
+script = ExtResource("2_c6dvc")
+navigation_button = NodePath(".")
+destination_scene = "res://scenes/Task_1/Task_1.tscn"
